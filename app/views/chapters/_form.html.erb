@@ -1,0 +1,33 @@
+<%= form_for(@chapter) do |f| %>
+  <% if @chapter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this chapter from being saved:</h2>
+
+      <ul>
+      <% @chapter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :es_description %><br>
+    <%= f.text_area :es_description %>
+  </div>
+  <div class="field">
+    <%= f.label :en_description %><br>
+    <%= f.text_area :en_description %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :version_id %><br>
+    <%= f.number_field :version_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

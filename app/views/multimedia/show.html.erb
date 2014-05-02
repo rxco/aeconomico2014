@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @multimedium.type %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @multimedium.url %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @multimedium.content_id %>
+</p>
+
+<%= link_to 'Edit', edit_multimedium_path(@multimedium) %> |
+<%= link_to 'Back', multimedia_path %>

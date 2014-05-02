@@ -1,12 +1,8 @@
 AeconomicoWeb::Application.routes.draw do
-  resources :multimedia
-
-  resources :contents
-
-  resources :subchapters
-
-  resources :chapters
-
+  get "chapter/es_description:text"
+  get "chapter/en_description:text"
+  get "chapter/category_id:integer"
+  get "chapter/version_id:integer"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

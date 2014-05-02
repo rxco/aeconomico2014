@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  es_description: MyText
+  en_description: MyText
+  quadrant: 1
+  inner_quadrant: 1
+  quadrant_type: 1
+  subchapter_id: 1
+
+two:
+  es_description: MyText
+  en_description: MyText
+  quadrant: 1
+  inner_quadrant: 1
+  quadrant_type: 1
+  subchapter_id: 1
