@@ -7,13 +7,25 @@
 	ul{
 		list-style-type:none;
 	}
+
+	#contenido{
+			width: 100%;
+			height: 100%;
+	}
+
 </style>
 <div>
 	<ul>
+	<li><%= link_to "admin perfiles", profiles_home_index_path,:remote=>true %></li>
+	<li><%= link_to "admin perfiles", capitulos_home_index_path,:remote=>true %></li>
 	<li><a href="#">Admin Capitulos</a></li>
 	<li><a href="#">Admin subcapitulos</a></li>
 	<li><a href="#">Admin Categorias</a></li>
-	<li><a href="#">Admin Perfiles</a></li>
 	<li><a href="#">Admin contenidos</a></li>
 	</ul>
 </div>
+<br><br>
+	<div id="contenido">
+			
+	</div>
+</br>
