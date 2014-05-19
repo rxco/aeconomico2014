@@ -15,6 +15,7 @@ AeconomicoWeb::Application.routes.draw do
   resources :home do
     collection do
       get 'profiles'
+      get 'capitulos'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
