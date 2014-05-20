@@ -7,6 +7,8 @@ AeconomicoWeb::Application.routes.draw do
 
   resources :chapters
 
+  resources :categories
+
   root :to => "home#index"
 
   get 'admin', to: 'home#admin'
@@ -16,6 +18,9 @@ AeconomicoWeb::Application.routes.draw do
     collection do
       get 'profiles'
       get 'capitulos'
+      get 'categorias'
+      get 'contenidos'
+      get 'subcapitulos'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

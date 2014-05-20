@@ -1,0 +1,15 @@
+<h1>Lista de categorias</h1>
+
+<% Category.all.each do |cat| %>
+	<b>id categoría</b> <%= cat.id %><br>
+	<b>Descripción Español:</b> <%= cat.es_description %><br>
+	<b>Descripción Inglés:</b> <%= cat.es_description %><br>
+	 <td><%= link_to 'Edit', edit_category_path(cat) %></td>
+     <td><%= link_to 'Destroy', cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<br><br>
+
+<H2>CREAR NUEVA CATEGORIA<H2>
+<%= render :partial => '/categories/form' %>
+
