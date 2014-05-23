@@ -4,12 +4,15 @@
 	<b>id categoría</b> <%= cat.id %><br>
 	<b>Descripción Español:</b> <%= cat.es_description %><br>
 	<b>Descripción Inglés:</b> <%= cat.es_description %><br>
-	 <td><%= link_to 'Edit', edit_category_path(cat) %></td>
-     <td><%= link_to 'Destroy', cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'Edit', edit_category_path(cat) %>&nbsp;
+     <%= link_to 'Destroy', cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+     <br><br>
 <% end %>
 
 <br><br>
 
+
+<hr width="100%">
 <H2>CREAR NUEVA CATEGORIA<H2>
 <%= render :partial => '/categories/form' %>
 
