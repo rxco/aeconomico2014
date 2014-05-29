@@ -20,8 +20,8 @@
         <td><%= subchapter.chapter %></td>
         <td>
 
-          <% Subchapter.find(subchapter.id).profiles.all do |profile| %>
-              <%= profile.es_description %>
+          <% subchapter.profiles.all.each do |profile| %>
+              <b><%= profile.es_description %>,</b>
           <% end %>
         </td>
         <td><%= link_to 'Show', subchapter %></td>
