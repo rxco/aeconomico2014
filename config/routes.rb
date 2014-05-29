@@ -9,6 +9,8 @@ AeconomicoWeb::Application.routes.draw do
 
   resources :categories
 
+  resources :profiles
+
   root :to => "home#index"
 
   get 'admin', to: 'home#admin'

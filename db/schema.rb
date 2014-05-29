@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505001001) do
+ActiveRecord::Schema.define(version: 20140529003809) do
 
   create_table "categories", force: true do |t|
     t.text     "es_description"
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20140505001001) do
   end
 
   create_table "profiles", force: true do |t|
-    t.text     "es_description"
-    t.text     "en_description"
+    t.string   "es_description"
+    t.string   "en_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(version: 20140505001001) do
     t.text     "es_description"
     t.text     "en_description"
     t.integer  "chapter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "suggestions", force: true do |t|
+    t.integer  "subchapter_id"
+    t.integer  "profile_id"
+    t.boolean  "relevant"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

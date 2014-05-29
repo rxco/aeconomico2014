@@ -1,1 +1,34 @@
-capitulso
+<h1>Capitulos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Es description</th>
+      <th>En description</th>
+      <th>Category</th>
+      <th>Version</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Chapter.all.each do |chapter| %>
+      <tr>
+        <td><%= chapter.es_description %></td>
+        <td><%= chapter.en_description %></td>
+        <td><%= chapter.category_id %></td>
+        <td><%= chapter.version_id %></td>
+        <td><%= link_to 'Show', chapter %></td>
+        <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
+        <td><%= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<hr width="100%">
+
+<%= render :partial => '/chapters/form_ajax',locals: {_chapter_var: Chapter.new} %>

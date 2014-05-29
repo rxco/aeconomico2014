@@ -1,1 +1,38 @@
-hola subcapitulos admin
+<h1>Listing subcapitulos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Es description</th>
+      <th>En description</th>
+      <th>Chapter</th>
+      <th>Perfiles</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Subchapter.all.each do |subchapter| %>
+      <tr>
+        <td><%= subchapter.es_description %></td>
+        <td><%= subchapter.en_description %></td>
+        <td><%= subchapter.chapter %></td>
+        <td>
+
+          <% Subchapter.find(subchapter.id).profiles.all do |profile| %>
+              <%= profile.es_description %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', subchapter %></td>
+        <td><%= link_to 'Edit', edit_subchapter_path(subchapter) %></td>
+        <td><%= link_to 'Destroy', subchapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<hr width="100%">
+<%= render :partial => '/subchapters/form_ajax',locals: {_subchapter_var: Subchapter.new} %>

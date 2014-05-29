@@ -1,0 +1,29 @@
+<%= form_for(_subchapter_var) do |f| %>
+  <% if _subchapter_var.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(_subchapter_var.errors.count, "error") %> prohibited this subchapter from being saved:</h2>
+
+      <ul>
+      <% _subchapter_var.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :es_description %><br>
+    <%= f.text_area :es_description %>
+  </div>
+  <div class="field">
+    <%= f.label :en_description %><br>
+    <%= f.text_area :en_description %>
+  </div>
+  <div class="field">
+    <%= f.label :chapter_id %><br>
+     <%= f.collection_select(:chapter_id, Chapter.all, :id, :es_description) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

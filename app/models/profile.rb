@@ -1,4 +1,4 @@
 class Profile < ActiveRecord::Base
-	has_many :subchapterprofiles
-	has_many :subchapters, :through => :subchapterprofiles
+	has_many :suggestions
+	has_many :subchapters, :through => :suggestions
 end

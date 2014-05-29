@@ -1,11 +1,10 @@
-<h1>Listing Perfiles</h1>
+<h1>Listing profiles</h1>
 
 <table>
   <thead>
     <tr>
       <th>Es description</th>
       <th>En description</th>
-      <th>Chapter</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% Profile.all.each do |profile| %>
+    <% @profiles.each do |profile| %>
       <tr>
         <td><%= profile.es_description %></td>
         <td><%= profile.en_description %></td>
@@ -21,13 +20,10 @@
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-
-      
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<hr width="100%">
-<%= render :partial => '/profiles/form_ajax',locals: {_profile_var: Profile.new} %>
+<%= link_to 'New Profile', new_profile_path %>

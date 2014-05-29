@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Es description:</strong>
+  <%= @profile.es_description %>
+</p>
+
+<p>
+  <strong>En description:</strong>
+  <%= @profile.en_description %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

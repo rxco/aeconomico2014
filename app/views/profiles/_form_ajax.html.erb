@@ -1,0 +1,24 @@
+<%= form_for(_profile_var) do |f| %>
+  <% if _profile_var.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(_profile_var.errors.count, "error") %> prohibited this chapter from being saved:</h2>
+      <ul>
+      <% _profile_var.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :es_description %><br>
+    <%= f.text_area :es_description %>
+  </div>
+  <div class="field">
+    <%= f.label :en_description %><br>
+    <%= f.text_area :en_description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

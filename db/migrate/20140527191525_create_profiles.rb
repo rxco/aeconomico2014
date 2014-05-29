@@ -1,8 +1,8 @@
 class CreateProfiles < ActiveRecord::Migration
   def change
     create_table :profiles do |t|
-      t.text :es_description
-      t.text :en_description
+      t.string :es_description
+      t.string :en_description
 
       t.timestamps
     end
