@@ -15,6 +15,10 @@ AeconomicoWeb::Application.routes.draw do
 
   get 'admin', to: 'home#admin'
 
+#routes for admin panel
+  match "delete_subchapter_profile" => "home#delete_subchapter_profile", via: [:get, :post]
+  match "create_subchapter_profile" => "home#create_subchapter_profile", via: [:get, :post]
+
 
   resources :home do
     collection do

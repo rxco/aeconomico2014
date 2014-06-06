@@ -1,38 +1,45 @@
-<h1>Listing subcapitulos</h1>
+<style>
+  .bordes{
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: black;
+  }
+</style>
+<h1>Lista subcapitulos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Es description</th>
-      <th>En description</th>
-      <th>Chapter</th>
-      <th>Perfiles</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% Subchapter.all.each do |subchapter| %>
-      <tr>
-        <td><%= subchapter.es_description %></td>
-        <td><%= subchapter.en_description %></td>
-        <td><%= subchapter.chapter %></td>
-        <td>
-
+      <div class="bordes" id="subchapters">
+        <p>Subchapter-id : <%= subchapter.id%> </p>
+        <p><b>Español: </b><%= subchapter.es_description%></p>
+         <p><b>Inglés: </b><%=subchapter.en_description%></p>
+         <div class="perfiles_control">
+              <b>Capitulo: </b><%=subchapter.chapter.es_description%></p>
+             <%= collection_select(:id, :description, Profile.all, :id, :es_description) %>
+             <a href="#" data-profile-id="<%= subchapter.id %>" class="agregar_perfil"> Agregar Perfil a Subcapitulo</a>
+         </div>
+          
+          <ul>
           <% subchapter.profiles.all.each do |profile| %>
-              <b><%= profile.es_description %>,</b>
+          <li class="bordes">
+            <%= profile.es_description %> 
+            <p  class="listaPerfiles" data-profile-id="<%= profile.id %>" data-subchapter-id="<%= subchapter.id%>">
+            <b > borrar</b>
+           </p>
+          </li>
           <% end %>
-        </td>
-        <td><%= link_to 'Show', subchapter %></td>
-        <td><%= link_to 'Edit', edit_subchapter_path(subchapter) %></td>
-        <td><%= link_to 'Destroy', subchapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+            </ul>
+            <br>
+          </p>
+
+        <p><%= link_to 'Show', subchapter %>
+        <%= link_to 'Edit', edit_subchapter_path(subchapter) %>
+       <%= link_to 'Destroy', subchapter, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          
+      </div>
+      <br>
     <% end %>
-  </tbody>
-</table>
 
 <br>
-
+<h1>Crear Nuevo</h1>
 <hr width="100%">
 <%= render :partial => '/subchapters/form_ajax',locals: {_subchapter_var: Subchapter.new} %>
