@@ -1,0 +1,41 @@
+<%= form_for(_content_var) do |f| %>
+  <% if _content_var.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(_content_var.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% _content_var.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :es_description %><br>
+    <%= f.text_area :es_description %>
+  </div>
+  <div class="field">
+    <%= f.label :en_description %><br>
+    <%= f.text_area :en_description %>
+  </div>
+  <div class="field">
+    <%= f.label :quadrant %><br>
+    <%= f.number_field :quadrant %>
+  </div>
+  <div class="field">
+    <%= f.label :inner_quadrant %><br>
+    <%= f.number_field :inner_quadrant %>
+  </div>
+  <div class="field">
+    <%= f.label :quadrant_type %><br>
+    <%= f.number_field :quadrant_type %>
+  </div>
+  <div class="field">
+    <%= f.label :subchapter_id %><br>
+    <%= f.number_field :subchapter_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

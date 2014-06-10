@@ -1,1 +1,10 @@
-hola contenidos admin
+<h5>Selecciona un subchapter </h5>
+<%= collection_select(:id, :description, Subchapter.all, :id, :es_description) %>
+<br>
+<br>
+<br>
+
+
+
+<h3>Contenidos de Perfil</h3>
+<%= render :partial => '/contents/form_ajax',locals: {_content_var: Content.new} %>
