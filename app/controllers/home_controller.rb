@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     @subchapter_id = params[:subchapter_id]
     @profile_id = params[:profile_id]
 
-    @subchapter = Subchapter.find(@subchapter_id).profiles.delete(@profile_id)
+    @subchapter = Chapter.find(@subchapter_id).profiles.delete(@profile_id)
     
     respond_with( admin_path , :layout => !request.xhr?)
   end
@@ -24,7 +24,7 @@ class HomeController < ApplicationController
      @subchapter_id = params[:subchapter_id]
     @profile_id = params[:profile_id]
 
-    Subchapter.find(@subchapter_id).suggestions.create(:profile_id=>@profile_id)
+    Chapter.find(@subchapter_id).suggestions.create(:profile_id=>@profile_id)
     respond_with( admin_path , :layout => !request.xhr?)
   end
 end

@@ -1,0 +1,5 @@
+var _subchapter_id = $(".subchapter_choose_content").val();
+var _html_param = "<%= escape_javascript(render :partial => 'profiles_content', :locals => { :subchapter_id =>'";
+_html_param += _subchapter_id;
+_html_param += "' } ) %>";
+$("#container_content_by_subchapter").html(_html_param);

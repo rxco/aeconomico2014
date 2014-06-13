@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603221102) do
+ActiveRecord::Schema.define(version: 20140610231202) do
 
   create_table "categories", force: true do |t|
     t.text     "es_description"
@@ -74,14 +74,15 @@ ActiveRecord::Schema.define(version: 20140603221102) do
   end
 
   create_table "suggestions", force: true do |t|
-    t.integer  "subchapter_id"
     t.integer  "profile_id"
     t.boolean  "relevant"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "chapter_id"
   end
 
-  add_index "suggestions", ["subchapter_id", "profile_id"], name: "index_suggestions_on_subchapter_id_and_profile_id", unique: true
+  add_index "suggestions", ["chapter_id", "profile_id"], name: "index_suggestions_on_chapter_id_and_profile_id", unique: true
+  add_index "suggestions", ["profile_id"], name: "index_suggestions_on_subchapter_id_and_profile_id", unique: true
 
   create_table "versions", force: true do |t|
     t.integer  "year"

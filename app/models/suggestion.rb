@@ -3,5 +3,5 @@ class Suggestion < ActiveRecord::Base
 	#usar profile en lugar de profiles
 	
 	belongs_to :profile
-	belongs_to :subchapter
+	belongs_to :chapter
 end

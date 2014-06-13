@@ -1,8 +1,12 @@
 <h5>Selecciona un subchapter </h5>
-<%= collection_select(:id, :description, Subchapter.all, :id, :es_description) %>
+<%= collection_select(:id, :description, Subchapter.all, :id, :es_description,{:prompt=>true}, {:class=>'subchapter_choose_content'}) %>
 <br>
 <br>
 <br>
+
+<div id="container_content_by_subchapter">
+	
+</div>
 
 
 

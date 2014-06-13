@@ -54,6 +54,7 @@ class ChaptersController < ApplicationController
   # DELETE /chapters/1
   # DELETE /chapters/1.json
   def destroy
+    @chapter.profiles.delete_all
     @chapter.destroy
     respond_to do |format|
       format.html { redirect_to chapters_url }

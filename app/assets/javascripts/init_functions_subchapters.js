@@ -1,4 +1,4 @@
-function init.acciones.subchapters(){
+function init_acciones_subchapters(){
 
 
 	$(document).on("click",".listaPerfiles", function(){
@@ -27,7 +27,7 @@ function init.acciones.subchapters(){
 		llamadaAjax( _url , _params);
 	});
 
-	
+
 
 
 }

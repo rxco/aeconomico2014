@@ -54,7 +54,6 @@ class SubchaptersController < ApplicationController
   # DELETE /subchapters/1
   # DELETE /subchapters/1.json
   def destroy
-    @subchapter.profiles.delete_all
     @subchapter.destroy
 
     respond_to do |format|
