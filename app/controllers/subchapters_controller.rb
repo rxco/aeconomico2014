@@ -10,6 +10,22 @@ class SubchaptersController < ApplicationController
   # GET /subchapters/1
   # GET /subchapters/1.json
   def show
+    @param = params[:id]
+
+    @contents = Content.find_all_by_subchapter_id(@param.to_i)
+    #puts request.xhr
+    #respond_with( @contents , :layout => !request.xhr?)
+    respond_to do |format|
+    if @contents
+        format.html { redirect_to @contents, notice: 'Subchapter was successfully updated.' }
+        format.json { render json: @contents }
+      else
+        format.html { render action: 'show' }
+        format.json { render json: nil, status: :unprocessable_entity }
+      end
+     end 
+
+
   end
 
   # GET /subchapters/new

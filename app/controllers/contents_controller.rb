@@ -69,6 +69,6 @@ class ContentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def content_params
-      params.require(:content).permit(:es_description, :en_description, :quadrant, :inner_quadrant, :quadrant_type, :subchapter_id)
+      params.require(:content).permit(:es_description, :en_description, :subchapter_id,:image_url,:content_type,:order)
     end
 end

@@ -1,14 +1,36 @@
 <h5>Selecciona un subchapter </h5>
-<%= collection_select(:id, :description, Subchapter.all, :id, :es_description,{:prompt=>true}, {:class=>'subchapter_choose_content'}) %>
+<% Subchapter.all.each do |sb|%>
+	<%= link_to sb.es_description, sb, remote: true,  :class => "subchapter_choose_content" , :data => { :'sb-id' => sb.id } %>
+<% end %>
 <br>
 <br>
 <br>
 
 <div id="container_content_by_subchapter">
 	
+
+	<div id="contenidos_load" style="display:none; margin-bottom:10px;">
+		<h3> Contenidos existentes</h3>
+		<table id="lista_contenidos_por_subcapitulo" border=1 >
+			<thead>
+				<td>Desc Español</td>
+				<td>Desc Inglès</td>
+				<td>Subcapitulo</td>
+				<td>Url Imagen</td>
+				<td>Tipo Contenido</td>
+				<td>Orden</td>
+			</thead>
+			<tbody></tbody>
+		</table>
+
+		<br>
+	</div>
+<hr width="100%">
+	<div id="contenidos_new" style="display:none; margin-top:10px; width:200px;">
+		<h3> Crear Nuevo Contenido</h3>
+		<br>
+		<%= render :partial => '/contents/form_ajax',locals: {_content_var: Content.new} %>
+	</div>
+
+
 </div>
-
-
-
-<h3>Contenidos de Perfil</h3>
-<%= render :partial => '/contents/form_ajax',locals: {_content_var: Content.new} %>

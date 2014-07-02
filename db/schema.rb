@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610231202) do
+ActiveRecord::Schema.define(version: 20140702013201) do
 
   create_table "categories", force: true do |t|
     t.text     "es_description"
@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 20140610231202) do
   create_table "contents", force: true do |t|
     t.text     "es_description"
     t.text     "en_description"
-    t.integer  "quadrant"
-    t.integer  "inner_quadrant"
-    t.integer  "quadrant_type"
     t.integer  "subchapter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "image_url"
+    t.integer  "content_type"
+    t.integer  "order"
   end
 
   create_table "multimedia", force: true do |t|
