@@ -1,4 +1,17 @@
 AeconomicoWeb::Application.routes.draw do
+
+  namespace :api do
+    resources :responses,format: 'json' do
+      collection do
+        get :random
+        get :index
+        get :get_all_contents_by_subchapter_id
+      end
+    end
+
+
+  end
+
   resources :multimedia
 
   resources :contents
