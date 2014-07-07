@@ -14,10 +14,10 @@ end
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
-  gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
 end
 # Use SCSS for stylesheets
+gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'
 
 # Use Uglifier as compressor for JavaScript assets
