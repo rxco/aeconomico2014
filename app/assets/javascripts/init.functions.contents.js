@@ -7,6 +7,15 @@ function init_functions_content(){
 			load_content_by_subchapter(_subchapter_selected);
 	});
 
+     var videobackground = new $.backgroundVideo($('body'), {
+                "align": "centerXY",
+                "width": 1280,
+                "height": 720,
+                "path": "assets/videos/",
+                "filename": "cloud",
+                "types": ["mp4","ogg","webm"]
+                });
+
 }
 
 
