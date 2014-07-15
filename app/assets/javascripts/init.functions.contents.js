@@ -7,7 +7,7 @@ function init_functions_content(){
 			load_content_by_subchapter(_subchapter_selected);
 	});
 
-     var videobackground = new $.backgroundVideo($('#video_background'), {
+     var videobackground = new $.backgroundVideo($('#vbackground'), {
                 "align": "centerXY",
                 "width": 1280,
                 "height": 720,
