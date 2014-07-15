@@ -1,2 +1,1 @@
-alert("subchapter_selected:" + subchapter_selected);
 $("#container_content_by_subchapter").html("<%= escape_javascript(render :partial => 'profiles_content', :locals => { :orders => params[:selected] } ) %>");

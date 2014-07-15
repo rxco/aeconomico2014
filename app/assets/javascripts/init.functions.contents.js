@@ -13,7 +13,7 @@ function init_functions_content(){
                 "height": 720,
                 "path": "assets/videos/",
                 "filename": "cloud",
-                "types": ["mp4","ogg","webm"]
+                "types": ["mp4"]
                 });
 
 }
