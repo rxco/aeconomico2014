@@ -9,7 +9,6 @@ AeconomicoWeb::Application.routes.draw do
       end
     end
 
-
   end
 
   resources :multimedia
@@ -25,6 +24,8 @@ AeconomicoWeb::Application.routes.draw do
   resources :profiles
 
   root :to => "home#index"
+
+  get 'contenido', to: "home#contenido_principal"
 
   get 'admin', to: 'home#admin'
 
