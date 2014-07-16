@@ -26,6 +26,7 @@ AeconomicoWeb::Application.routes.draw do
   root :to => "home#index"
 
   get 'contenido', to: "home#contenido_principal"
+  get 'capitulo', to: "home#capitulo"
 
   get 'admin', to: 'home#admin'
 
