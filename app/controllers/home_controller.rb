@@ -7,6 +7,9 @@ class HomeController < ApplicationController
   def admin
   end
 
+  def capitulo
+  end
+
 
 
   def delete_subchapter_profile
