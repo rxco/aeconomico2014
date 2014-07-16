@@ -61,14 +61,27 @@ textarea {
    ========================================================================== */
 /*====== index ======*/
 .intro-message {
+    color: #fff;
+    position: relative;
+}
+.intro-message-m {
     color: #292929;
     position: relative;
 }
-.intro-fondo{
-   background: rgba(255,255,255, 0.5);
+
+.pos-fond{
    padding: 10px;
    margin: 10px 0;
-   margin: 5% 0 0 0;
+   margin: 6% 0 0 0;
+}
+
+.intro-fondo{
+   background: rgba(0,0,0, 0.5);
+   height: 100%;
+   /*border-radius: 10px;*/
+}
+.intro-fondo-m{
+   background: rgba(255,255,255, 0.4);
    /*border-radius: 10px;*/
 }
 .intro-titulo{
@@ -83,6 +96,29 @@ textarea {
 }
 .btn-transparenre{
     background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Aller-Light', sans-serif;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 10px 7px;
+}
+
+.btn-transparenre:hover{
+    background: rgba(255,255,255, 1);
+    color: #292929;
+}
+.btn-transparenre:visited{
+    color: #292929;
+}
+
+.btn-transparenre-m{
+    background: transparent;
     border: 1px solid #292929;
     color: #292929;
     cursor: pointer;
@@ -96,12 +132,12 @@ textarea {
     padding: 10px 7px;
 }
 
-.btn-transparenre:hover{
+.btn-transparenre-m:hover{
     border: 1px solid #292929;
     background: rgba(255,255,255, 0.8);
     color: #292929;
 }
-.btn-transparenre:visited{
+.btn-transparenre-m:visited{
     color: #292929;
 }
 
@@ -112,9 +148,8 @@ textarea {
     position:fixed;
     left:0px;
     bottom:0px;
-    height:100px;
+    height:90px;
     width:100%;
-    background: rgba(255,255,255, 1);
 }
 /* IE 6 */
 * html #footer {
@@ -153,13 +188,15 @@ textarea {
     height: 60px;
     line-height: 60px;
 }
+.fondo-logo-index{
+    top: 60px;
+    background: #FFF;
+    height:30px;
+    position: relative;
+}
 .logo-index{
-    position:static;
-    left:0px;
-    bottom:0px;
-    width:100%;
-    background:#fff;
-    margin: 0 0 10px 0;
+    position: relative;
+    bottom: 12px;
 }
 /* === Box Result === */
 .box-result{
