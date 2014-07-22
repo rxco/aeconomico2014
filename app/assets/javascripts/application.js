@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require jquery.init
 //= require vendor/jquery.backgroundvideo.min
+//= require outdatedBrowser/outdatedBrowser.min
