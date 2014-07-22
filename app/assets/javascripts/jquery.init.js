@@ -1,8 +1,11 @@
-$(document).ready(function(){
-	/* DECLARAR FUNCIONES QUE SERÁN LLAMADAS AL MOMENTO QUE CARGUE LA WEBAPP*/
+$(document).on("ready",function(){
 
-	init_acciones_subchapters();
-
-	init_functions_content();
-
-});
+	 var videobackground = new $.backgroundVideo($('#vbackground'), {
+                "align": "centerXY",
+                "width": 1280,
+                "height": 720,
+                "path": "videos/",
+                "filename": "cloud",
+                "types": ["mp4","ogg","webm"]
+                });
+})
