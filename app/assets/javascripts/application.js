@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery.init
+//= require vendor/jquery.backgroundvideo.min
+//= require outdatedBrowser/outdatedBrowser.min
