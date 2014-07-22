@@ -153,10 +153,9 @@
         </div>
 
         <!-- javascript includes -->
-        <!--<script src="assets/outdatedBrowser/outdatedBrowser.min.js"></script>-->
-        <!-- <%= javascript_include_tag "outdatedBrowser/outdatedBrowser.min" %> -->
-
-        <!-- plugin call -->
+        <%= javascript_include_tag "application"%>
+        <!-- Outdated Browser -->
+        <%= javascript_include_tag "outdatedBrowser/outdatedBrowser.min" %>
         <script>
             //event listener form DOM ready
             function addLoadEvent(func) {
@@ -179,6 +178,12 @@
                 })
             );
         </script>
+
+        <!-- plugin Video Background -->
+        <%= javascript_include_tag "vendor/jquery.backgroundvideo.min" %>
+        <%= javascript_include_tag "init.functions.contents" %>
+
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <!-- <%= javascript_include_tag "vendor/bootstrap" %>-->

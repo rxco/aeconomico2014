@@ -1,7 +1,130 @@
-<div id="menu_capitulos" style="display:block">
-	<%= render :partial => "home/partials/lista_capitulos" %>
-</div>
+ 	<body class="fon-bod">
+        <div class="contenido">
+            <ul id="gn-menu" class="gn-menu-main">
+                <li class="gn-trigger">
+                    <a class="gn-icon gn-icon-menu"><span>Menú</span></a>
+                    <nav class="gn-menu-wrapper gn-open-part"> <!-- gn-open-part -->
+                        <div class="gn-scroller">
+                            <ul class="gn-menu">
+                                <li class="gn-search-item">
+                                    <input placeholder="BUSCAR" type="search" class="gn-search">
+                                    <a class="gn-icon gn-icon-search"><!-- <span>Buscar</span> --></a>
+                                </li>
+                                <li>
+                                    <a class="gn-icon gn-icon-catego menu-bold">Categorias</a>
+                                    <ul class="gn-submenu filtrar">
+                                        <li><a data-filter=".med" class="gn-icon gn-icon-medio medio-item">Medio Ambiente</a></li>
+                                        <li><a data-filter=".dem" class="gn-icon gn-icon-demo demo-item">Demografia</a></li>
+                                        <li><a data-filter=".cal" class="gn-icon gn-icon-cali cali-item">Calidad de Vida</a></li>
+                                        <li><a data-filter=".edu" class="gn-icon gn-icon-edu edu-item">Educación</a></li>
+                                        <li><a data-filter=".des" class="gn-icon gn-icon-des des-item">Desarrollo Agropecuario</a></li>
+                                        <li><a data-filter=".ind" class="gn-icon gn-icon-ind ind-item">Industria Manufacturera</a></li>
+                                        <li><a data-filter=".com" class="gn-icon gn-icon-com com-item">Comercio y Servicios</a></li>
+                                        <li><a data-filter=".gob" class="gn-icon gn-icon-gob gob-item">Gobierno Municipal</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="gn-icon gn-icon-grafic menu-bold">Gráficos</a></li>
+                                <li id="inline-popups"><a href="#test-popup" class="gn-icon gn-icon-contac menu-bold" data-effect="mfp-3d-unfold">Contacto</a></li>
+                                <li id="inline-popups"><a href="#test-popup" class="gn-icon" data-effect="mfp-3d-unfold"> &nbsp; </a></li>
+                            </ul>
+                        </div><!-- /gn-scroller -->
+                    </nav>
+                </li>
 
-<div id="contenido_capitulo" style="display:none">
-  <%= render :partial => "home/partials/capitulo" %>
-</div>
+                <li class="logoa-fondo"><span class="name-style"><div class="name"><%= image_tag("logoanuario.png") %></div><div class="name-short"><%= image_tag("logoanuario-m.png") %></div></span></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      <span class="perfil-tipo">
+                        <span class="glyphicon glyphicon-user"></span> PERFIL
+                      </span>
+                      <span class="caret"></span>
+                    </a>  
+                  <ul class="dropdown-menu filtrar">
+                    <li><a href="#" data-filter=".ciu"><span class="glyphicon glyphicon-home"></span> CIUDADANO</a></li>
+                    <li><a href="#" data-filter=".est"><span class="glyphicon glyphicon-book"></span> ESTUDIANTE</a></li>
+                    <li><a href="#" data-filter=".emp"><span class="glyphicon glyphicon-briefcase"></span> EMPRESARIO</a></li>
+                    <li><a href="#" data-filter=".inv"><span class="glyphicon glyphicon-usd"></span> INVERSIONISTA</a></li>
+                    <li><a href="#" data-filter="*" class="actual"><span class="glyphicon glyphicon-user"></span> SIN PERFIL</a></li>
+                  </ul>
+                </li>
+                <li ><a class="codrops-icon codrops-icon-prev regresar-result" href="#"><span>ATRAS</span></a></li>
+            </ul>
+                <!-- Popup itself -->
+                <div id="test-popup" class="white-popup mfp-with-anim mfp-hide">
+                    <h3 class="text-center"><strong>Dejanos tu comentario</strong></h3>
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Comentario</label>
+                      <textarea class="form-control" placeholder="Comentario" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger btn-block">Enviar</button>
+                  </form>
+                </div><!-- END Popup -->
+
+	            	<div id="menu_capitulos" style="display:block">
+						<%= render :partial => "home/partials/lista_capitulos" %>
+					</div>
+
+					<div id="contenido_capitulo" style="display:none">
+					  <%= render :partial => "home/partials/capitulo" %>
+					</div>
+
+				<footer>
+                    <div id="footer" class="container">
+                        <div class="row text-center">
+                            <div class="fondo-logo-index">p</div>  
+                            <div class="logo-index">
+                                <center><%= image_tag("logo-municipio.png",:class=>"img-responsive bordr-img") %></center>
+                            </div>          
+                        </div>
+                    </div>
+                </footer>
+        </div><!-- /-contenido -->
+
+        <!-- ============= Outdated Browser ============= -->
+        <div id="outdated">
+             <h6>Su navegador no esta actualizado!</h6>
+             <p>ACTUALICE SU NAVEGADOR PARA VISUALIZAR ESTA PÁGINA WEB CORRECTAMENTE. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Actualizar mi navigador ahora </a></p>
+             <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+        </div>
+
+        <!-- Outdated Browser
+        <script src="js/outdatedBrowser/outdatedBrowser.min.js"></script>-->
+        <!-- plugin call -->
+        <script>
+            //event listener form DOM ready
+            function addLoadEvent(func) {
+                var oldonload = window.onload;
+                if (typeof window.onload != 'function') {
+                    window.onload = func;
+                } else {
+                    window.onload = function() {
+                        oldonload();
+                        func();
+                    }
+                }
+            }
+            //call function after DOM ready
+            addLoadEvent(
+                outdatedBrowser({
+                    bgColor: '#f25648',
+                    color: '#ffffff',
+                    lowerThan: 'transform'
+                })
+            );
+        </script>
+
+        <script>
+            new gnMenu(document.getElementById('gn-menu') );
+        </script>
+        
+        <!-- Pop Up -->
+		<!-- <%= javascript_include_tag "jquery.magnific-popup.min.js" %>
+		<%= javascript_include_tag "prefixfree.min.js" %>
+		<%= javascript_include_tag "main.js" %> -->
+	</body>
+</html>

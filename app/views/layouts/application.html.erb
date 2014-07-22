@@ -10,16 +10,63 @@
     <meta name="description" content="Anuario Económico Municipal 2014">
     <meta name="keywords" content="Querétaro, Municipio, Anuario, Económico, 2014" />
     <meta name="author" content="Applicattio">
-	<!-- RoR -->
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  	<%= csrf_meta_tags %>
-  	
-  	<!-- IE8 support for HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  	<!-- RoR -->
+  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    
+    <%= csrf_meta_tags %>
+    
+    <style>
+      /* text-based popup styling */
+            .white-popup {
+              position: relative;
+              background: #FFF;
+              padding: 25px;
+              width: auto;
+              max-width: 400px;
+              margin: 0 auto;
+            }
+            /* 
+            ====== 3d unfold ======
+            */
+            .mfp-3d-unfold {
+              /* start state */
+              /* animate in */
+              /* animate out */
+            }
+            .mfp-3d-unfold .mfp-content {
+              perspective: 2000px;
+            }
+            .mfp-3d-unfold .mfp-with-anim {
+              opacity: 0;
+              transition: all 0.3s ease-in-out;
+              transform-style: preserve-3d;
+              transform: rotateY(-60deg);
+            }
+            .mfp-3d-unfold.mfp-bg {
+              opacity: 0;
+              transition: all 0.5s;
+            }
+            .mfp-3d-unfold.mfp-ready .mfp-with-anim {
+              opacity: 1;
+              transform: rotateY(0deg);
+            }
+            .mfp-3d-unfold.mfp-ready.mfp-bg {
+              opacity: 0.8;
+            }
+            .mfp-3d-unfold.mfp-removing .mfp-with-anim {
+              transform: rotateY(60deg);
+              opacity: 0;
+            }
+            .mfp-3d-unfold.mfp-removing.mfp-bg {
+              opacity: 0;
+            }
+    </style>
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 </head>
 <%= yield %>
 </html>
