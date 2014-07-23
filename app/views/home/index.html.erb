@@ -145,42 +145,9 @@
                 </footer>
     </div>
 
-    <!-- ============= Outdated Browser ============= -->
-        <div id="outdated">
-             <h6>Su navegador no esta actualizado!</h6>
-             <p>ACTUALICE SU NAVEGADOR PARA VISUALIZAR ESTA PÁGINA WEB CORRECTAMENTE. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Actualizar mi navigador ahora </a></p>
-             <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-        </div>
+    <%= render :partial => "home/outdatedBrowser" %>
 
-        <script>
-            //event listener form DOM ready
-            function addLoadEvent(func) {
-                var oldonload = window.onload;
-                if (typeof window.onload != 'function') {
-                    window.onload = func;
-                } else {
-                    window.onload = function() {
-                        oldonload();
-                        func();
-                    }
-                }
-            }
-            //call function after DOM ready
-            addLoadEvent(
-                outdatedBrowser({
-                    bgColor: '#f25648',
-                    color: '#ffffff',
-                    lowerThan: 'transform'
-                })
-            );
-        </script>
-
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <!-- <%= javascript_include_tag "vendor/bootstrap" %>-->
-        <!--<script src="assets"></script>-->
-        <!-- video fondo -->
-       <!-- <%= javascript_include_tag "vendor/jquery.backgroundvideo.min" %>-->
-        <!--<script src="assets/vendor/jquery.backgroundvideo.min.js"></script>-->
-    </body>
+    <!-- Plugin Video Background -->
+    <script src="../../../js/jquery.backgroundvideo.min.js"> </script>
+    <script src="../../../js/jquery.init.js"></script>
+</body>

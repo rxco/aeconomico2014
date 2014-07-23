@@ -13,6 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+<<<<<<< HEAD
+//= require jquery.init
+//= require vendor/jquery.backgroundvideo.min
+//= require outdatedBrowser/outdatedBrowser.min
+//= require menu/classie
+//= require menu/gnmenu
+=======
 //= require vendor/bootstrap
 //= require vendor/modernizr-2.6.2.min
 //= require outdatedBrowser/outdatedBrowser.min
+>>>>>>> 6647c50aa87212cfa9ee67cf509467ce3ed5a97a
