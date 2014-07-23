@@ -1,5 +1,5 @@
- 	<body class="fon-bod">
-        <div class="contenido">
+<body class="fon-bod">
+    <div class="contenido">
             <ul id="gn-menu" class="gn-menu-main">
                 <li class="gn-trigger">
                     <a class="gn-icon gn-icon-menu"><span>Menú</span></a>
@@ -83,48 +83,17 @@
                         </div>
                     </div>
                 </footer>
-        </div><!-- /-contenido -->
+    </div><!-- /-contenido -->
 
-        <!-- ============= Outdated Browser ============= -->
-        <div id="outdated">
-             <h6>Su navegador no esta actualizado!</h6>
-             <p>ACTUALICE SU NAVEGADOR PARA VISUALIZAR ESTA PÁGINA WEB CORRECTAMENTE. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Actualizar mi navigador ahora </a></p>
-             <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-        </div>
-
-        <!-- Outdated Browser
-        <script src="js/outdatedBrowser/outdatedBrowser.min.js"></script>-->
-        <!-- plugin call -->
-        <script>
-            //event listener form DOM ready
-            function addLoadEvent(func) {
-                var oldonload = window.onload;
-                if (typeof window.onload != 'function') {
-                    window.onload = func;
-                } else {
-                    window.onload = function() {
-                        oldonload();
-                        func();
-                    }
-                }
-            }
-            //call function after DOM ready
-            addLoadEvent(
-                outdatedBrowser({
-                    bgColor: '#f25648',
-                    color: '#ffffff',
-                    lowerThan: 'transform'
-                })
-            );
-        </script>
-
-        <script>
-            new gnMenu(document.getElementById('gn-menu') );
-        </script>
+    <%= render :partial => "home/outdatedBrowser" %>
+			
+    <script>
+        new gnMenu(document.getElementById('gn-menu') );
+    </script>
         
-        <!-- Pop Up -->
-		<!-- <%= javascript_include_tag "jquery.magnific-popup.min.js" %>
-		<%= javascript_include_tag "prefixfree.min.js" %>
-		<%= javascript_include_tag "main.js" %> -->
+    <!-- Pop Up -->
+	<!-- <%= javascript_include_tag "jquery.magnific-popup.min.js" %>
+	<%= javascript_include_tag "prefixfree.min.js" %>
+	<%= javascript_include_tag "main.js" %> -->
 	</body>
 </html>

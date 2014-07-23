@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.init
-//= require vendor/jquery.backgroundvideo.min
-//= require outdatedBrowser/outdatedBrowser.min
+//= require vendor/bootstrap
+//= require vendor/modernizr-2.6.2.min
