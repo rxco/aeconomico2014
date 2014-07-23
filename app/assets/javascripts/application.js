@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.init
 //= require vendor/bootstrap
 //= require vendor/modernizr-2.6.2.min
