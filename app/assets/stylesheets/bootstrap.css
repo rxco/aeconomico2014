@@ -3016,7 +3016,7 @@ input[type="button"].btn-block {
   min-width: 175px;
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 14px;
+  font-size: 15px;
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
@@ -3051,7 +3051,7 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: normal;
   /*line-height: 1.42857143;*/
-  color: #4d4d4d;
+  color: #292929;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
