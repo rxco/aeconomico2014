@@ -16,7 +16,11 @@
     <!-- javascript includes -->
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    
+
+    <% if content_for? :for_head %>
+      <%= yield :for_head %>
+    <% end %>
+
     <style>
       /* text-based popup styling */
             .white-popup {

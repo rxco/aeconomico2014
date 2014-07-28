@@ -1,11 +1,16 @@
-<style>
-  .bordes{
-    border-width: 1px; 
-    border-style: solid; 
-    border-color: black;
-  }
-</style>
-<h1>Capitulos</h1>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Capitulos</h1>
+    </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 text-right">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#newChapter">
+      Nuevo Capitulo
+    </button>
+  </div>
+</div>
+<br>
 
 
     <% Chapter.all.each do |chapter| %>
@@ -40,5 +45,17 @@
     <% end %>
 
 <br>
-
-<%= render :partial => '/chapters/form_ajax',locals: {_chapter_var: Chapter.new} %>
+<!-- Modal Nuevo -->
+<div class="modal fade" id="newChapter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nueva Categoria</h4>
+      </div>
+      <div class="modal-body">
+        <%= render :partial => '/chapters/form_ajax',locals: {_chapter_var: Chapter.new} %>
+      </div>
+    </div>
+  </div>
+</div>
