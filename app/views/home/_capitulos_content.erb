@@ -11,40 +11,39 @@
   </div>
 </div>
 <br>
-
-
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover dataTable no-footer">
+    <tr>
+      <th>ID</th>
+      <th>Descripción Español</th>
+      <th>Descripción Inglés</th>
+      <th>Agregar Perfil</th>
+      <th></th>
+    </tr>
     <% Chapter.all.each do |chapter| %>
-      <div class="bordes" id="subchapters">
-        <p>chapter-id : <%= chapter.id%> </p>
-        <p><b>Español: </b><%= chapter.es_description%></p>
-         <p><b>Inglés: </b><%=chapter.en_description%></p>
-         <div class="perfiles_control">
-             <%= collection_select(:id, :description, Profile.all, :id, :es_description) %>
-             <a href="#" data-profile-id="<%= chapter.id %>" class="agregar_perfil"> Agregar Perfil a Subcapitulo</a>
-         </div>
-          
-          <ul>
-          <% chapter.profiles.all.each do |profile| %>
-          <li class="bordes">
-            <%= profile.es_description %> 
-            <p  class="listaPerfiles" data-profile-id="<%= profile.id %>" data-subchapter-id="<%= chapter.id%>">
-            <b > borrar</b>
-           </p>
-          </li>
-          <% end %>
-            </ul>
-            <br>
-          </p>
-
-        <p><%= link_to 'Show', chapter %>
-        <%= link_to 'Edit', edit_chapter_path(chapter) %>
-       <%= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-          
-      </div>
-      <br>
+      <tr>
+        <td><%= chapter.id%></td>
+        <td><%= chapter.es_description%></td>
+        <td><%=chapter.en_description%></td>
+        <td>
+          <div class="form-group">
+            <%= collection_select(:id, :description, Profile.all, :id, :es_description,{},{:class => "form-control"}) %>
+          </div>
+          <a href="#" data-profile-id="<%= chapter.id %>" class="agregar_perfil btn btn-primary btn-block"> Agregar</a>
+        <% chapter.profiles.all.each do |profile| %>
+          <%= profile.es_description %> 
+          <p  class="listaPerfiles" data-profile-id="<%= profile.id %>" data-subchapter-id="<%= chapter.id%>">
+          <b > borrar</b>
+        <% end %>
+        </td>
+        <td><%= link_to 'Editar', edit_chapter_path(chapter) %>
+            <%= link_to 'Borrar', chapter, method: :delete, data: { confirm: '¿Estás seguro de eliminar?' } %>
+        </td>
+      </tr>
     <% end %>
+  </table>
+</div>
 
-<br>
 <!-- Modal Nuevo -->
 <div class="modal fade" id="newChapter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">

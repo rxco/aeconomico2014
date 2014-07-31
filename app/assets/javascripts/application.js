@@ -16,3 +16,7 @@
 //= require vendor/bootstrap
 //= require vendor/modernizr-2.6.2.min
 //= require outdatedBrowser/outdatedBrowser.min
+
+//= require init_functions_subchapters
+//= require init.functions.contents
+//= require init_functions_generic

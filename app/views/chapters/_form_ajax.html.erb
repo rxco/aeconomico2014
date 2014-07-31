@@ -20,11 +20,11 @@
     </div>
     <div class="form-group">
       <label for="disabledTextInput">Capitulo</label>
-      <%= f.collection_select(:category_id, Category.all, :id, :es_description) %>
+      <%= f.collection_select(:category_id, Category.all, :id, :es_description,{},{:class => "form-control"}) %>
     </div>
     <div class="form-group">
       <label for="disabledTextInput">Versión</label>
-      <%= f.collection_select(:version_id, Version.all, :id, :year) %>
+      <%= f.collection_select(:version_id, Version.all, :id, :year,{},{:class => "form-control"}) %>
     </div>
 
   <div class="actions">
