@@ -6,6 +6,7 @@ AeconomicoWeb::Application.routes.draw do
         get :random
         get :index
         get :get_all_contents_by_subchapter_id
+        get :get_all_categories
       end
     end
 

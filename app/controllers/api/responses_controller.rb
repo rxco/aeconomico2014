@@ -29,4 +29,16 @@ class Api::ResponsesController < ApplicationController
 
     end
 
+    def get_all_categories
+    	@categories = Category.all
+
+    	json_response = 
+    	{
+    		models:@categories
+    	}
+
+    	respond_with json_response
+    end
+
+
 end
