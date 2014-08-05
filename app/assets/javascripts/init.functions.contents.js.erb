@@ -2,7 +2,7 @@ function init_functions_content(){
 
 
 	$(document).on("click",".subchapter_choose_content",function(){
-			var _subchapter_selected = $(this).attr("data-sb-id");
+			var _subchapter_selected = $(this).attr("sb-id");
 			$("#content_subchapter_id").val(_subchapter_selected);
 			load_content_by_subchapter(_subchapter_selected);
 	});

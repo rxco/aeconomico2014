@@ -1,6 +1,6 @@
 <h5>Selecciona un subchapter </h5>
 <% Subchapter.all.each do |sb|%>
-	<%= link_to sb.es_description, sb, remote: true,  :class => "subchapter_choose_content" , :data => { :'sb-id' => sb.id } %>
+	<button class="subchapter_choose_content" sb-id="<%= sb.id %>"> <%= sb.es_description%></button>
 <% end %>
 <br>
 <br>
