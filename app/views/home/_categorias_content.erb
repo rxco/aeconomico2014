@@ -18,7 +18,7 @@
 			<th>ID</th>
 			<th>Descripción Español</th>
 			<th>Descripción Inglés</th>
-			<th width= "105px"></th>
+			<th width= "132px"></th>
 		</tr>
 	  	<% Category.all.each do |cat| %>
 	  	<tr>
@@ -26,8 +26,8 @@
 		 	<td><%= cat.es_description %></td>
 		 	<td><%= cat.en_description %></td>
 		 	<td>
-		 		<%= link_to 'Editar', edit_category_path(cat) %>&nbsp;
-	     		<%= link_to 'Borrar', cat, method: :delete, data: { confirm: '¿Estás seguro de eliminar?' } %>
+		 		<%= link_to 'Editar', edit_category_path(cat),:class=>"btn btn-warning btn-sm" %>
+	     		<%= link_to 'Borrar', cat, method: :delete, data: { confirm: '¿Estás seguro de eliminar?' },:class=>"btn btn-danger btn-sm" %>
 		 	</td>
 	  	</tr>
 		<% end %>
