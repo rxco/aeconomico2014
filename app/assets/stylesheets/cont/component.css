@@ -374,8 +374,8 @@ button.trigger span::before {
 }
 
 .intro-effect-sliced.modify .bg-img:first-child {
-	-webkit-transform: translateY(-80%);
-	transform: translateY(-80%);
+	-webkit-transform: translateY(-81%);
+	transform: translateY(-81%);
 }
 
 .intro-effect-sliced.modify .bg-img:last-child {
