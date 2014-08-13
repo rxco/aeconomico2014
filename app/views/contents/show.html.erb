@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<div>
 <p>
   <strong>Es description:</strong>
-  <%= @content.es_description %>
+  <span id="page_name" data-mercury="full" contenteditable="true">
+  	<%= @content.es_description %>
+  </span>
 </p>
 
 <p>

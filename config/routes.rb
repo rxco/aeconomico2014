@@ -1,5 +1,7 @@
 AeconomicoWeb::Application.routes.draw do
 
+  mount Mercury::Engine => '/'
+  Mercury::Engine.routes
   namespace :api do
     resources :responses,format: 'json' do
       collection do
