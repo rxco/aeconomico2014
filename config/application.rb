@@ -20,7 +20,7 @@ module AeconomicoWeb
     
     config.assets.initialize_on_precompile = false
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '3.0'
+    config.assets.version = '4.0'
     
     config.autoload_paths << "#{Rails.root}/lib"
     #config.assets.paths << "#{Rails.root}/app/assets/videos"
