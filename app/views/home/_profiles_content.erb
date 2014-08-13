@@ -17,15 +17,15 @@
     <tr>
       <th>Descripción Español</th>
       <th>Descripción Inglés</th>
-      <th width= "100px"></th>
+      <th width= "132px"></th>
     </tr>
     <% Profile.all.each do |profile| %>
       <tr>
         <td><%= profile.es_description %></td>
         <td><%= profile.en_description %></td>
         <td>
-          <%= link_to 'Editar', edit_profile_path(profile) %>
-          <%= link_to 'Borrar', profile, method: :delete, data: { confirm: '¿Estás seguro de eliminar??' } %>
+          <%= link_to 'Editar', edit_profile_path(profile),:class=>"btn btn-warning btn-sm" %>
+          <%= link_to 'Borrar', profile, method: :delete, data: { confirm: '¿Estás seguro de eliminar?' },:class=>"btn btn-danger btn-sm" %>
         </td>
       </tr>
     <% end %>

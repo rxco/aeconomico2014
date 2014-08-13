@@ -1,6 +1,11 @@
-<h5>Selecciona un subchapter </h5>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Contenidos</h1>
+    </div>
+</div>
+<h5>Selecciona un subcapitulo </h5>
 <% Subchapter.all.each do |sb|%>
-	<button class="subchapter_choose_content" sb-id="<%= sb.id %>"> <%= sb.es_description%></button>
+	<button class="subchapter_choose_content btn btn-default" sb-id="<%= sb.id %>" data-toggle="modal" data-target="#newContent"> <%= sb.es_description%></button>
 <% end %>
 <br>
 <br>
@@ -8,29 +13,11 @@
 
 <div id="container_content_by_subchapter">
 	
-
-	<div id="contenidos_load" style="display:none; margin-bottom:10px;">
-		<h3> Contenidos existentes</h3>
-		<table id="lista_contenidos_por_subcapitulo" border=1 >
-			<thead>
-				<td>Desc Español</td>
-				<td>Desc Inglès</td>
-				<td>Subcapitulo</td>
-				<td>Url Imagen</td>
-				<td>Tipo Contenido</td>
-				<td>Orden</td>
-			</thead>
-			<tbody></tbody>
-		</table>
-
-		<br>
-	</div>
 <hr width="100%">
 	<div id="contenidos_new" style="display:none; margin-top:10px; width:200px;">
 		<span id="page_name" data-mercury="full" contenteditable="true">
 		Aquí se cargarán los contenidos por subcapitulos
   		</span>
 	</div>
-
 
 </div>

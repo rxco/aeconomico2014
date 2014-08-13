@@ -17,7 +17,7 @@ $(window).load(function(){
         $container.isotope({
             filter: selector,
             animationOptions: {
-                duration: 750,
+                duration: 900,
                 easing: 'linear',
                 queue: false
             }

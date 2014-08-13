@@ -68,7 +68,38 @@ textarea {
     color: #292929;
     position: relative;
 }
-
+.btn-mora{
+    background: #822490;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #822490;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Aller-Light', sans-serif;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 10px 7px;
+}
+.btn-mora:hover{
+    background: #641b6f;
+    color: #fff;
+    text-decoration: none;
+}
+.btn-mora:visited{
+    color: #fff;
+}
+.linea-categoria{
+    border: solid;;
+    top: 60px;
+    position: fixed;
+    z-index: 2;
+    border-width: 2px;
+    width: 100%;
+}
 .pos-fond{
    padding: 10px;
    margin: 10px 0;
@@ -200,6 +231,8 @@ textarea {
     background: #FFF;
     height:30px;
     position: relative;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .175);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .175);
 }
 .logo-index{
     position: relative;
@@ -221,7 +254,7 @@ textarea {
     font-family: 'Aller-Light', sans-serif;
     min-height: 85px;
     max-height: 85px;
-    margin: 2px -10px 10px -10px;
+    margin: 2px 0 15px 0;
     /*-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .175);
     box-shadow: 0 2px 10px rgba(0, 0, 0, .175);*/
     border: 1px solid;
@@ -285,10 +318,13 @@ textarea {
 }
 
 .regresar-result{
-    background:#d3d3d3 ;
+    background:#d0221d ;
     color: #FFF !important;
 }
-
+.regresar-result:hover{
+    background:#b21c18 !important;
+    color: #FFF !important;
+}
 /* ===  Efectt  === */
 
 .isotope-item {
@@ -344,6 +380,10 @@ textarea {
     color:#dadada;
 }
 
+.tag{
+    margin: 2px;
+    float: left;   
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */

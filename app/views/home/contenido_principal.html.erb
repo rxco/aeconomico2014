@@ -3,7 +3,7 @@
         <ul id="gn-menu" class="gn-menu-main">
             <li class="gn-trigger">
                     <a class="gn-icon gn-icon-menu"><span>Menú</span></a>
-                    <nav class="gn-menu-wrapper gn-open-part"> <!-- gn-open-part -->
+                    <nav class="gn-menu-wrapper"> <!-- gn-open-part -->
                         <div class="gn-scroller">
                             <ul class="gn-menu">
                                 <li class="gn-search-item">
@@ -47,8 +47,7 @@
                     <li><a href="#" data-filter="*" class="actual"><span class="glyphicon glyphicon-user"></span> SIN PERFIL</a></li>
                   </ul>
             </li>
-            <li ><a class="codrops-icon codrops-icon-prev regresar-result" href="#"><span>ATRAS</span></a>
-            </li>
+            <li ><a class="codrops-icon codrops-icon-prev regresar-result" href="#"><span>ATRAS</span></a></li>
         </ul>
         <!-- Popup itself -->
         <div id="test-popup" class="white-popup mfp-with-anim mfp-hide">
@@ -70,7 +69,8 @@
 			<%= render :partial => "home/partials/lista_capitulos" %>
 		</div>
 		<div id="contenido_capitulo" style="display:none">
-			<%= render :partial => "home/partials/capitulo" %>
+            <div id="linea-cambiar" class="linea-categoria medio-color"></div>  
+			<%= render :partial => "home/partials/capitulo2" %>
 		</div>
     </div><!-- /-contenido -->
     <footer>
@@ -83,14 +83,12 @@
             </div>
         </div>
     </footer><!-- /-Footer -->
-
     <%= render :partial => "home/outdatedBrowser" %>
-			
     <!-- Menu -->
     <script src="../../../js/menu/classie.js"></script>
     <script src="../../../js/menu/gnmenu.js"></script>
     <script>
-        new gnMenu( document.getElementById( 'gn-menu' ) );
+        new gnMenu( document.getElementById('gn-menu') );
     </script>    
     <!-- Pop Up -->
     <script src="../../../js/popup/jquery.magnific-popup.min.js"></script>

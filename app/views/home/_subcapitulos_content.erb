@@ -17,15 +17,15 @@
     <tr>
       <th>Descripción Español</th>
       <th>Descripción Inglés</th>
-      <th width= "100px"></th>
+      <th width= "132px"></th>
     </tr>
     <% Subchapter.all.each do |subchapter| %>
       <tr>
         <td><%= subchapter.es_description %></td>
         <td><%= subchapter.en_description %></td>
         <td>
-          <%= link_to 'Editar', edit_subchapter_path(subchapter) %>
-          <%= link_to 'Borrar', subchapter, method: :delete, data: { confirm: '¿Estás seguro de eliminar?' } %></td>
+          <%= link_to 'Editar', edit_subchapter_path(subchapter),:class=>"btn btn-warning btn-sm" %>
+          <%= link_to 'Borrar', subchapter, method: :delete, data: { confirm: '¿Estás seguro de eliminar?' },:class=>"btn btn-danger btn-sm" %></td>
       </tr>
       <% end %>
   </table>
