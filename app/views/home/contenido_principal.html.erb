@@ -65,11 +65,12 @@
                   </form>
         </div><!-- END Popup -->
 
-	    <div id="menu_capitulos" style="display:none">
+	    <div id="menu_capitulos" style="display:block">
 			<%= render :partial => "home/partials/lista_capitulos" %>
 		</div>
-		<div id="contenido_capitulo" style="display:block">
-			<%= render :partial => "home/partials/capitulo" %>
+		<div id="contenido_capitulo" style="display:none">
+            <div id="linea-cambiar" class="linea-categoria medio-color"></div>  
+			<%= render :partial => "home/partials/capitulo2" %>
 		</div>
     </div><!-- /-contenido -->
     <footer>
