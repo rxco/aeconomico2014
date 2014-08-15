@@ -1,5 +1,5 @@
 $(window).load(function(){
-    var $container = $('.contenedor-result');
+    var $container = $('.efecto');
     $container.isotope({
         filter: '*',
         animationOptions: {
