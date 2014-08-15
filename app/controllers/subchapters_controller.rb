@@ -17,8 +17,8 @@ class SubchaptersController < ApplicationController
     #respond_with( @contents , :layout => !request.xhr?)
     respond_to do |format|
     if @contents
-        format.html { redirect_to @contents, notice: 'Subchapter was successfully updated.' }
-        format.json { render json: @contents }
+        #format.html { redirect_to @contents, notice: 'Subchapter was successfully updated.' }
+        format.json { render html: @contents }
       else
         format.html { render action: 'show' }
         format.json { render json: nil, status: :unprocessable_entity }

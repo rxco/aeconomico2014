@@ -7,7 +7,6 @@ function init_functions_content(){
 			load_content_by_subchapter(_subchapter_selected);
 	});
 
-
     //console.log( "<%= asset_path('cloud.jpg') %>");
 }
 
@@ -16,7 +15,12 @@ function init_functions_content(){
 function load_content_by_subchapter(_id_subchapter){
 	var _params = {}
 	var _domain = document.domain;
-    var _url ="http://"+ _domain +"/subchapters/"+_id_subchapter;
+    var _puerto = "";
+    if(_domain == "localhost"){
+        _puerto= ":3000"
+    }
+
+    var _url ="http://"+ _domain+""+_puerto+"/subchapters/"+_id_subchapter;
     _url += ".json";
     //alert(_url);
     var _fnDoNothing = function(){};

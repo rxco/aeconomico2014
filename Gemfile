@@ -12,10 +12,10 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :assets do
-  gem 'sass-rails', '~> 4.0.0'
-  gem 'uglifier', '>= 1.3.0'
-end
+
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+
 # Use SCSS for stylesheets
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'
@@ -32,6 +32,9 @@ gem 'haml-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#jquery support just for using on mercury
+gem 'jquery-migrate-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -45,6 +48,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+gem 'mercury-rails', :git=>"https://github.com/jejacks0n/mercury.git"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap
+ *= require main
+ *= require popup/magnific-popup
+ *= require outdatedBrowser/outdatedBrowser.min
+ *= require menu/component
+ *= require cont/component
  */

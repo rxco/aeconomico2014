@@ -8,4 +8,5 @@ $(document).on("ready",function(){
                 "filename": "cloud",
                 "types": ["mp4","ogg","webm"]
                 });
+
 })
