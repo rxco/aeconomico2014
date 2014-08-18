@@ -5,6 +5,6 @@ $(document).ready(function(){
 
 	init_functions_content();
 
-	jQuery(parent).trigger('initialize:frame');
+	//jQuery(parent).trigger('initialize:frame');
 
 });

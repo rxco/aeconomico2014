@@ -13337,28 +13337,25 @@ function init_acciones_subchapters(){
 ;
 function init_functions_content(){
 
-
 	$(document).on("click",".subchapter_choose_content",function(){
 			var _subchapter_selected = $(this).attr("sb-id");
 			$("#content_subchapter_id").val(_subchapter_selected);
 			load_content_by_subchapter(_subchapter_selected);
 	});
 
-    //console.log( "/cloud.jpg");
 }
 
 
 
 function load_content_by_subchapter(_id_subchapter){
-	var _params = {}
+	var _params = {"subchapter_id":_id_subchapter}
 	var _domain = document.domain;
     var _puerto = "";
     if(_domain == "localhost"){
         _puerto= ":3000"
     }
 
-    var _url ="http://"+ _domain+""+_puerto+"/subchapters/"+_id_subchapter;
-    _url += ".json";
+    var _url ="http://"+ _domain+""+_puerto+"/api/requests/obtenerTemasPorSubCapitulo";
     //alert(_url);
     var _fnDoNothing = function(){};
 
@@ -13371,16 +13368,14 @@ function load_content_by_subchapter(_id_subchapter){
     		$("#lista_contenidos_por_subcapitulo tbody").html("");
 
     		if(data.length > 0){
-    			$(data).each(function(index,dat){
+    			$(data).each(function(index,data){
+                    var object=data;
     				showFormUpdateContents();
-    				showFormNewContent();
-    				//var html = "<li>"+dat.es_description+"</li>";
-    				createNewContentHtmlObject(dat.es_description,
-    					dat.en_description,
-    					dat.subchapter_id,
-    					dat.image_url,
-    					dat.content_type,
-    					dat.order);
+    				createNewContentHtmlObject(
+                        object.id,
+                        object.es_description,
+    					object.en_description,
+    					object.subchapter_id);
 
     			});
     		}
@@ -13392,7 +13387,7 @@ function load_content_by_subchapter(_id_subchapter){
 
 
 
-	llamadaAjaxGet(_url, _params,_fnDoTheWork, _fnDoNothing,_fnFail , _fnDoNothing);
+	llamadaAjax(_url, _params,_fnDoTheWork, _fnDoNothing,_fnFail , _fnDoNothing);
 
 }
 
@@ -13415,14 +13410,15 @@ function hideFormUpdateContents(){
 }
 
 
-function createNewContentHtmlObject(_esDescription,_enDescription,_sbChapter,_imgUrl,_contentType,_order){
+function createNewContentHtmlObject(_id,_esDescription,_enDescription,_sbChapter){
 	
+    //wyswyg = acronimo what you see is what you get
+    var btn_wyswyg ="<a href='editor/contents/"+_id+"' class='btn btn-primary'>Agregar Contenidos</a>";
+    var btn_editar_descs = "<a href='/contents/"+_id+"/edit' class='btn btn-secondary'>Editar</a> ";
 	var html="<tr><td>"+_esDescription+"</td>";
 	html += "<td>"+_enDescription+"</td>";
 	html += "<td>"+_sbChapter+"</td>";
-	html += "<td>"+_imgUrl+"</td>";
-	html += "<td>"+_contentType+"</td>";
-	html += "<td>"+_order+"</td></tr>";
+    html += "<td>"+ btn_wyswyg +" "+btn_editar_descs+"</td>";
 
 	$("#lista_contenidos_por_subcapitulo tbody").append(html);
 
@@ -13435,8 +13431,8 @@ function createNewContentHtmlObject(_esDescription,_enDescription,_sbChapter,_im
 /*Se pasa una URL y los parametros necesarios para llamar una acción*/
 
 function llamadaAjax(_url, _params,_fnsuccess,_fndone,_fnfail,_fnalways){
-
-		var jqxhr = $.post( _url , _params, _fnsuccess)
+		
+		var jqxhr = $.getJSON( _url , _params, _fnsuccess)
 		  .done(_fndone)
 		  .fail(_fnfail)
 		  .always(_fnalways);
@@ -13445,7 +13441,6 @@ function llamadaAjax(_url, _params,_fnsuccess,_fndone,_fnfail,_fnalways){
 
 /*Se pasa una URL y los parametros necesarios para llamar una acción METHOD GET*/
 function llamadaAjaxGet(_url, _params,_fnsuccess,_fndone,_fnfail,_fnalways){
-	console.log(_url);
 		var jqxhr = $.getJSON( _url , _params, _fnsuccess)
 		  .done(_fndone)
 		  .fail(_fnfail)

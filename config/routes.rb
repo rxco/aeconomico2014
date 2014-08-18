@@ -2,14 +2,13 @@ AeconomicoWeb::Application.routes.draw do
 
   mount Mercury::Engine => '/'
   Mercury::Engine.routes
+
   namespace :api do
-    resources :responses,format: 'json' do
+    resources :requests,format: 'json' do
       collection do
-        get :random
-        get :index
-        get :get_all_contents_by_subchapter_id
-        get :get_all_categories
+        get :obtenerTemasPorSubCapitulo
       end
+
     end
 
   end
@@ -29,13 +28,16 @@ AeconomicoWeb::Application.routes.draw do
   root :to => "home#index"
 
   get 'contenido', to: "home#contenido_principal"
-  get 'capitulo', to: "home#capitulo"
 
   get 'admin', to: 'home#admin'
 
+  get 'sb',to: 'home#editor'
+
   get 'content_loader', to: 'contents#partial_loader'
 
-#routes for admin panel
+  get 'api_index',to: 'home#api_index'
+
+#routes for admixn panel
   match "delete_subchapter_profile" => "home#delete_subchapter_profile", via: [:get, :post]
   match "create_subchapter_profile" => "home#create_subchapter_profile", via: [:get, :post]
 

@@ -5,19 +5,51 @@
 </div>
 <h5>Selecciona un subcapitulo </h5>
 <% Subchapter.all.each do |sb|%>
-	<button class="subchapter_choose_content btn btn-default" sb-id="<%= sb.id %>" data-toggle="modal" data-target="#newContent"> <%= sb.es_description%></button>
+	<button class="subchapter_choose_content btn btn-default" sb-id="<%= sb.id %>" > <%= sb.es_description%></button>
 <% end %>
 <br>
 <br>
 <br>
-
 <div id="container_content_by_subchapter">
 	
-<hr width="100%">
-	<div id="contenidos_new" style="display:none; margin-top:10px; width:200px;">
-		<textarea id="page_name" data-mercury="full" contenteditable="true">
-		Aquí se cargarán los contenidos por subcapitulos
-  		</textarea>
+
+	<div id="contenidos_load" style="display:none; margin-bottom:10px;">
+		<h3> Contenidos existentes</h3>
+	   
+		<input type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalNewContent" value="Agregar Nuevo Contenido" style="float:right">
+		<br><br><br>
+		<div class="table-responsive">
+  <table id="lista_contenidos_por_subcapitulo" class="table table-striped table-bordered table-hover dataTable no-footer">
+			<thead>
+				<td>Desc Español</td>
+				<td>Desc Inglès</td>
+				<td>Subcapitulo</td>
+				<td>Acciones</td>
+			</thead>
+			<tbody></tbody>
+		</table>
+</div>
+
+		
 	</div>
+
+	<div id="newContent">
+	</div>
+
+<hr width="100%">
+<!-- Modal Nuevo -->
+<div class="modal fade" id="modalNewContent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nuevo Contenido</h4>
+      </div>
+      <div class="modal-body">
+        <%= render :partial => '/contents/form_ajax',locals: {_content_var: Content.new} %>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>

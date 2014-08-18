@@ -12,7 +12,7 @@
  * require jquery_ujs
  *
  * Add any requires for the support libraries that integrate nicely with Mercury Editor.
- * require mercury/support/history
+ *=require mercury/support/history
  *
  * Require Mercury Editor itself.
  *= require mercury/mercury
@@ -103,7 +103,7 @@ window.Mercury = {
           sep:                 ' '
           },
         insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['full', 'markdown'] }],
-        insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['full', 'markdown'] }],
+        insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['full', 'markdown','editable'] }],
         insertTable:           ['Table', 'Insert Table', { modal: '/mercury/modals/table.html', regions: ['full', 'markdown'] }],
         insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['full', 'markdown'] }],
         snippetPanel:          ['Snippet', 'Snippet Panel', { panel: '/mercury/panels/snippets.html' }],
@@ -449,6 +449,6 @@ window.Mercury = {
   // ## Debug Mode
   //
   // Turning debug mode on will log events and other various things (using console.debug if available).
-  debug: false
+  debug: true
 
 };

@@ -12,13 +12,13 @@ class SubchaptersController < ApplicationController
   def show
     @param = params[:id]
 
-    @contents = Content.find_all_by_subchapter_id(@param.to_i)
+    @subchapters = Subchapter.find(@param.to_i)
     #puts request.xhr
     #respond_with( @contents , :layout => !request.xhr?)
     respond_to do |format|
-    if @contents
-        #format.html { redirect_to @contents, notice: 'Subchapter was successfully updated.' }
-        format.json { render html: @contents }
+    if @subchapters
+        format.html { render html: @subchapters }
+        format.json { render json: @subchapters }
       else
         format.html { render action: 'show' }
         format.json { render json: nil, status: :unprocessable_entity }

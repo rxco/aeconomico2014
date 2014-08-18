@@ -1,22 +1,67 @@
-<p id="notice"><%= notice %></p>
-<div>
-<p>
-  <strong>Es description:</strong>
-  <span id="page_name" data-mercury="full" contenteditable="true">
-  	<%= @content.es_description %>
-  </span>
-</p>
+<style>
+	#content{
+		padding: 20px;
+	}
+	
+	.single,.doble_one,.one_doble,.tercia{
+		width: 100%;
+		height: 100px;
+	}
 
-<p>
-  <strong>En description:</strong>
-  <%= @content.en_description %>
-</p>
+	.doble{
+		height: 100%;
+		width:70%;
+		float:left;
+	}
+
+	.one{
+		height: 100%;
+		width:30%;
+		float:left;
+	}
+
+	.one3{
+		height: 100%;
+		width:33.3%;
+		float:left;
+	}
 
 
-<p>
-  <strong>Subchapter:</strong>
-  <%= @content.subchapter_id %>
-</p>
+</style>
+<div id="content" data-mercury="markdown">
 
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+<div class="single" data-mercury="full">
+</div>
+
+<div class="doble_one" >
+	<div class="doble" data-mercury="full">
+	</div>
+	<div class="one" data-mercury="full">
+	</div>
+</div>
+
+<div class="one_doble" >
+	<div class="one" data-mercury="full">
+	</div>
+	<div class="doble" data-mercury="full">
+	</div>
+</div>
+
+<div class="tercia" >
+	<div class="one3" data-mercury="full">
+	</div>
+	<div class="one3" data-mercury="full">
+	</div>
+	<div class="one3" data-mercury="full">
+	</div>
+</div>
+
+
+
+<div class="">
+	
+</div>
+
+
+
+</div>

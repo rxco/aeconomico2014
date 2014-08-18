@@ -4,7 +4,7 @@
     height: 28px;
   }
 </style>
-<%= form_for(_content_var, :remote => true, :id=>"form_new_content") do |f| %>
+<%= form_for(_content_var, :id=>"form_new_content") do |f| %>
   <% if _content_var.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(_content_var.errors.count, "error") %> prohibited this content from being saved:</h2>
@@ -27,8 +27,8 @@
   </div>
 
   <div class="form-group">
-    <label for="disabledTextInput">Imagen URL</label>
-    <%= f.number_field :subchapter_id, :class => "form-control",:placeholder => "Imagen URL", :required => "required", :min => "0" %>
+    <label for="disabledTextInput">Subchapter ID</label>
+    <%= f.text_field :subchapter_id, :class => "form-control disabled", :required => "required", :min => "0" %>
   </div>
     
   <div class="actions">
