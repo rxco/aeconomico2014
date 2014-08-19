@@ -13341,6 +13341,7 @@ function init_functions_content(){
 			var _subchapter_selected = $(this).attr("sb-id");
 			$("#content_subchapter_id").val(_subchapter_selected);
 			load_content_by_subchapter(_subchapter_selected);
+            showButtonNewContent();
 	});
 
 }
@@ -13394,7 +13395,14 @@ function load_content_by_subchapter(_id_subchapter){
 
 function showFormNewContent(){
 	$("#contenidos_new").show();
+}
 
+function showButtonNewContent(){
+    $("#btn_new_content").show();
+}
+
+function hideButtonNewContent(){
+    $("#btn_new_content").hide();
 }
 
 function showFormUpdateContents(){
