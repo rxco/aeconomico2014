@@ -13341,7 +13341,6 @@ function init_functions_content(){
 			var _subchapter_selected = $(this).attr("sb-id");
 			$("#content_subchapter_id").val(_subchapter_selected);
 			load_content_by_subchapter(_subchapter_selected);
-            showButtonNewContent();
 	});
 
 }
@@ -13379,11 +13378,9 @@ function load_content_by_subchapter(_id_subchapter){
     					object.subchapter_id);
 
     			});
+
     		}
-    		else{
-    			hideFormUpdateContents();
-    			showFormNewContent();
-    		}
+            showFormUpdateContents();
     };
 
 
@@ -13397,25 +13394,11 @@ function showFormNewContent(){
 	$("#contenidos_new").show();
 }
 
-function showButtonNewContent(){
-    $("#btn_new_content").show();
-}
-
-function hideButtonNewContent(){
-    $("#btn_new_content").hide();
-}
-
 function showFormUpdateContents(){
 	$("#contenidos_load").show();
 }
 
-function hideFormNewContent(){
-	$("#contenidos_load").hide();
-}
 
-function hideFormUpdateContents(){
-	$("#contenidos_load").hide();
-}
 
 
 function createNewContentHtmlObject(_id,_esDescription,_enDescription,_sbChapter){
